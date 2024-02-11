@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="profile-container">
+    <h2>Profile Information</h2>
+  
+    <form (ngSubmit)="submitForm()" #profileForm="ngForm">
+  
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" id="name" name="name" [(ngModel)]="profile.name" required>
+      </mat-form-field>
+  
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Date of Birth" id="dob" name="dob" [(ngModel)]="profile.dob"
+          required>
+        <mat-datepicker-toggle matSuffix [for]="picker" aria-labelledby="dob-label"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Qualification</mat-label>
+        <input matInput placeholder="Qualification" id="name" name="name" [(ngModel)]="profile.qualification" required>
+      </mat-form-field>
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Occupation</mat-label>
+        <input matInput placeholder="Occupation" id="name" name="name" [(ngModel)]="profile.occupation" required>
+      </mat-form-field>
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Mobile Number</mat-label>  
+        <input matInput placeholder="Mobile No." id="name" name="name" [(ngModel)]="profile.mobile" required>
+      </mat-form-field>
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Email Id</mat-label>
+        <input matInput placeholder="pat@example.com" id="name" name="name"  [formControl]="email" [(ngModel)]="profile.email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+            
+  
+      <mat-form-field class="form-group" appearance = "outline">
+        <mat-label>Marital Status</mat-label>
+        <mat-select id="maritalStatus" name="maritalStatus" [(ngModel)]="profile.maritalStatus" required>
+          <mat-option value="single">Single</mat-option>
+          <mat-option value="married">Married</mat-option>
+          <mat-option value="divorced">Divorced</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field class="form-group" *ngIf="showDependentField" appearance = "outline">
+        <input matInput type="number" id="dependents" name="dependents" placeholder="Number of Dependents"
+          [(ngModel)]="profile.dependents" required>
+      </mat-form-field> 
+  
+      <div class="btncontainer">
+
+        <button mat-raised-button color="primary" type="submit">Save Profile</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="meter">
+  <div class="fill" [style.width.%]="fillPercentage"></div>
+</div>
+
