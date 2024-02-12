@@ -22,7 +22,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatTableModule } from '@angular/material/table';
-import { ChartsComponent } from './charts/charts.component'; 
+import { ChartsComponent } from './charts/charts.component';
+import { InvestmentComponent } from './investment/investment.component';
+import { InvestmentDialogComponent } from './investment-dialog/investment-dialog.component'; 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -38,7 +42,9 @@ import { ChartsComponent } from './charts/charts.component';
     ProfileComponent,
     TransactionComponent,
     NewTransactionDialogComponent,
-    ChartsComponent
+    ChartsComponent,
+    InvestmentComponent,
+    InvestmentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,9 @@ import { ChartsComponent } from './charts/charts.component';
     MatDialogModule,
     MatRadioModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

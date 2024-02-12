@@ -1,0 +1,24 @@
+.investment-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .investment-details {
+    margin-right: 10px;
+  }
+  
+  .edit-button {
+    margin-left: auto;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .investment-container {
+      flex-direction: column;
+    }
+    .edit-button {
+      margin-top: 10px;
+    }
+  }
+  

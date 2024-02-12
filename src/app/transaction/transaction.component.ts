@@ -8,6 +8,7 @@ export interface TransactionData {
   description: string;
   amount: number;
   date: Date;
+  type: string;
 }
 
 @Component({
@@ -17,6 +18,9 @@ export interface TransactionData {
 })
 
 export class TransactionComponent implements OnInit {
+  totalIncome: number = 0;
+  totalExpense: number = 0;
+  totalAmount: number = 0;
   transactions: TransactionData[] = []; // Initialize with your transaction data structure
 
   displayedColumns: string[] = ['description', 'amount', 'date', 'actions'];
@@ -35,13 +39,31 @@ export class TransactionComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: TransactionData) => {
       if (result) {
-        this.transactions.push(result); // Add the new transaction to the transactions array
+        this.transactions = [...this.transactions, result]; // Concatenate new transaction with existing array
+      
+    // Add the new transaction to the transactions array
+        
         console.log("this is data from dialog", result);
+        console.log('this is transaction Array', this.transactions)
+      }
+
+      if (result) {
+        if (result.type === 'income') {
+          this.totalIncome += result.amount;
+        } else if (result.type === 'expense') {
+          this.totalExpense += result.amount;
+        }
+        this.totalAmount = this.totalIncome - this.totalExpense;
       }
     });
   }
 
-  deleteTransaction(index: number): void {
-    this.transactions.splice(index, 1); // Remove the transaction at the specified index
-  }
+  deleteTransaction(transaction: TransactionData): void {
+    const index = this.transactions.indexOf(transaction);
+    if (index !== -1) {
+        this.transactions.splice(index, 1);
+        this.transactions = [...this.transactions];
+    }
+ }
+
 }
