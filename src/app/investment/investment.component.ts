@@ -13,7 +13,7 @@ export class InvestmentComponent {
   realEstateValue!: number;
   monthlySIP!: number;
   debtInvestment!: number;
-  equityInvestment!: number;
+  equityInvestment!: number
   goldBondInvestment!: number;
   savingsInvestment!: number;
 
