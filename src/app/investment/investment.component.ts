@@ -10,7 +10,7 @@ import { InvestmentDialogComponent } from '../investment-dialog/investment-dialo
 export class InvestmentComponent {
   // Define variables to hold investment data
   emergencyFund!: number;
-  realEstateValue!: number;
+  realEstateValue!: number
   monthlySIP!: number;
   debtInvestment!: number;
   equityInvestment!: number
