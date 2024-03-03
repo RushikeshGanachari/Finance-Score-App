@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { MatInputModule } from '@angular/material/input';
@@ -35,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NewTransactionDialogComponent,
     ChartsComponent,
     InvestmentComponent,
-    InvestmentDialogComponent
+    InvestmentDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatTableModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SideNavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
